@@ -1,0 +1,230 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+  <title>ExifTool Version History</title>
+<link rel=stylesheet type='text/css' href='style.css' title='Style'>
+<link rel=alternate type='application/rss+xml' title='RSS Feed for ExifTool updates' href='http://owl.phy.queensu.ca/~phil/exiftool/rss.xml'>
+</head>
+<body>
+<h1 class='up'>ExifTool Version History</h1>
+
+<p>RSS feed: <a href="http://owl.phy.queensu.ca/~phil/exiftool/rss.xml">http://owl.phy.queensu.ca/~phil/exiftool/rss.xml</a></p>
+
+<p><b>Note:</b> The most recent production release is <a href="Image-ExifTool-10.80.tar.gz">Version 10.80</a>. (Other versions are
+considered development releases, and are not uploaded to <a href="http://search.cpan.org/dist/Image-ExifTool/">CPAN</a>.)</p>
+
+<!-- Use line width of 80 -->
+<!-- *********************************************************************** -->
+
+<a name='v10.87'><b>Mar. 20, 2018 - Version 10.87</b></a>
+<ul>
+<li>Added a new FujiFilm ShutterType value (thanks Albert Shan)
+<li>Decode more timed metadata from CR3 images
+<li>Decode Samsung DualShot depth map
+<li>Decode a new Canon tag
+<li>Improved decoding of some Canon color information (thanks LibRaw)
+<li>Fixed print conversion of ID3v2 Genre values with multiple genres
+</ul>
+
+<a name='v10.86'><b>Mar. 15, 2018 - Version 10.86</b></a>
+<ul>
+<li>Decode timed GPS and accelerometer data from BikeBro AVI videos
+<li>Decode a new Sony tag and add a new value to another tag (thanks Jos Roost)
+<li>Decode GPSAltitude from some videos with the -ee option
+<li>Decode some new tags from Kodak PixPro 4KVR360 JPEG images and MP4 videos
+<li>Decode GPS information from CR3 images
+<li>Fixed unnecessary warnings when Validate option used on CR3 images
+</ul>
+
+<a name='v10.85'><b>Mar. 14, 2018 - Version 10.85</b></a>
+<ul>
+<li>Decode GPSTrack from MOV videos of more dashcam models
+<li>Decode a few new CanonVRD tags for DPP 4.8.20
+<li>Decode a new Sony tag (thanks Jos Roost)
+<li>Decode a few more Canon tags (thanks LibRaw)
+<li>Improved processing speed when using the -ee option on some video files
+<li>Fixed incorrect names for a couple of CanonVRD HSL tags
+<li>Fixed problem where UTF-8 validation missed some invalid sequences
+<li>Fixed bug introduced in 10.84 with GPSPosition when -n option is used
+</ul>
+
+<a name='v10.84'><b>Mar. 12, 2018 - Version 10.84</b></a>
+<ul>
+<li>Decode GPS from MOV videos of more dashcam models with -ee option
+<li>Decode a new Sony tag (thanks Jos Roost)
+<li>Convert GPS speeds extracted from MOV videos with the -ee option to km/h
+<li>Avoid converting empty GPS coordinates to 0.000000
+<li>Fixed some bugs extracting Novatek GPS from MP4 videos
+</ul>
+
+<a name='v10.83'><b>Mar. 7, 2018 - Version 10.83</b></a>
+<ul>
+<li>Added read support for Sketch design files
+<li>Added Light LRI files to the list of recognized file types
+<li>Added a new Canon LensType (thanks LibRaw)
+<li>Decode a couple of new Sony tags (thanks Jos Roost)
+<li>Extract JpgFromRaw image from CR3 images
+<li>Improved warning message when attempting to write a tag in a specific group
+    that isn't writable
+<li>Changed group name of JSON tags from "File" to "JSON"
+<li>Fixed some incorrect offsets in -v3 output for CR3 images
+</ul>
+
+<a name='v10.82'><b>Mar. 1, 2018 - Version 10.82</b></a>
+<ul>
+<li>Added support for Canon's new CR3 raw file format
+<li>Added a few new CanonModelID/SonyModelID values (thanks LibRaw)
+<li>Added support for the Sony ILCE-7M3 (thanks Jos Roost)
+<li>Decode timed GPS information from Insta360 MP4 videos with the -ee option
+<li>Write XMP before idat in MOV/MP4/CR3 files if possible
+<li>Fixed "'x' outside of string" runtime error when reading some Sony images
+<li>Fixed problem with some hex dumps going to the console when -v3 was combined
+    with the -w option
+</ul>
+
+<a name='v10.81'><b>Feb. 26, 2018 - Version 10.81</b></a>
+<ul>
+<li>Added new values for a few Panasonic tags (thanks Bernd-Michael Kemper)
+<li>Added a new Canon, Olympus and Sony LensTypes (thanks LibRaw)
+<li>Added a new PanasonicRaw Compression type (thanks LibRaw)
+<li>Added definitions for a number of new MacOS tags
+<li>Decode CameraInfo for Canon 5DmkIII firmware 1.3.5
+<li>Removed INX from list of writable files (-listwf option output)
+<li>Fixed problem introduced in version 10.16 that could cause a "Can't create"
+    error when using the -o option to write certain types of files
+<li>Fixed problem introduced in version 10.34 resulting in a "Can't delete all
+    meta information" error when writing .PS files
+</ul>
+
+<a name='v10.80'><b>Feb. 22, 2018 - Version 10.80</b></a> <span class=grn>(production release)</span>
+<ul>
+<li>Added read/write support for Reconyx UltraFire maker notes
+<li>Added a new Sony/Minolta lens (thanks Jos Roost)
+<li>Decode a new PanasonicRaw tag (thanks LibRaw)
+<li>Extract ImageWidth/Height for main image of an HEIC file
+<li>Internal changes:
+    <ul>
+    <li>Changed TimeNow() make ExifTool object optional
+    </ul>
+</ul>
+
+<a name='v10.79'><b>Feb. 11, 2018 - Version 10.79</b></a>
+<ul>
+<li>Added a new Olympus CameraType (thanks LibRaw)
+<li>Added a new XMP-microsoft tag (thanks Jos&eacute; Oliver-Didier)
+<li>Decode a new GoPro QuickTime tag
+<li>Convert nulls IPTC:DocumentHistory to newlines
+<li>Removed all null terminators from JSON and PHP output
+<li>Fixed writing of GPSDateStamp and GPSTimeStamp to be able to set to "now"
+<li>Internal changes:
+    <ul>
+    <li>Changed TimeNow() to require ExifTool object as first argument
+    </ul>
+</ul>
+
+<a name='v10.78'><b>Jan. 31, 2018 - Version 10.78</b></a>
+<ul>
+<li>Added a few new values for some Olympus tags (thanks John)
+<li>Decode <a href="TagNames/GoPro.html">GoPro APP6 metadata</a> in JPEG images and more GoPro MP4 tags
+<li>Decode more <a href="TagNames/Red.html">Red tags</a>, and improved decoding of others
+<li>Decode face detection information from timed metadata with the -ee option
+<li>Fixed problem writing shorthand XMP containing CDATA sections
+<li>Fixed problem copying XMP-acdsee:Snapshots
+<li>Fixed decoding of a few <a href="TagNames/PanasonicRaw.html">Panasonic RAW tags</a> (thanks Klaus Homeister)
+</ul>
+
+<a name='v10.77'><b>Jan. 26, 2018 - Version 10.77</b></a>
+<ul>
+<li>Added read support for Redcode R3D RAW videos
+<li>Enhanced -sep option to specify separator and terminator for binary output
+<li>Removed null terminator from JSON output of ICC_Profile:CharTarget
+<li>Improved error messages to help diagnosing some types of corrupted files
+<li>Return an exit status of 2 instead of 1 if all files fail the -if condition
+<li>Fixed decoding of QuickTime chapter names
+<li>Fixed incorrect MimeType for RMD files
+<li>Fixed problem where exit status of 1 was returned when writing with a -if
+    condition if any of the files failed the condition
+</ul>
+
+<a name='v10.76'><b>Jan. 22, 2018 - Version 10.76</b></a>
+<ul>
+<li>Added ability to write shorthand XMP with the -z option
+<li>Added write support for <a href="TagNames/XMP.html#GFocus">Google XMP GFocus tags</a>
+<li>Improved decoding of GoPro timed metadata
+<li>Renamed ASF PlayDuration to Duration
+<li>Fixed problem where fractional seconds were ignored when geotagging from an
+    NMEA track log with no date stamps
+<li>Fixed runtime warning when reading XMP with an empty structure in a list
+<li>API Changes:
+    <ul>
+    <li>Added XMPShorthand option
+    <li>Enhanced Compact option so a setting of 2 avoids XMP indentation
+    </ul>
+</ul>
+
+<a name='v10.75'><b>Jan. 12, 2018 - Version 10.75</b></a>
+<ul>
+<li>Added another Sony/Minolta lens (thanks Jos Roost)
+<li>Decode more <a href="TagNames/QuickTime.html">QuickTime tags</a>
+<li>Decode a number of new tags from GoPro Hero6 MP4 videos
+<li>Enhanded "Unknown file type" error to indicate if "File is empty" or "File
+    header is all binary zeros"
+<li>Improved decoding of some Sony tags (thanks Jos Roost)
+<li>Improved decoding of <a href="TagNames/QuickTime.html#Stream">QuickTime timed metadata</a>
+<li>Marked ArtworkCircaDateCreated as "Unsafe" for writing to avoid it being
+    added when attempting to shift all date/time tags
+<li>Fixed bug which could cause runtime error when reading some old Sony maker
+    notes (thanks Tamas Lovag)
+</ul>
+
+<a name='v10.74'><b>Jan. 8, 2018 - Version 10.74</b></a>
+<ul>
+<li>Added a new Sony/Minolta lens (thanks Jos Roost)
+<li>Added print conversion for ICC_Profile DeviceManufacturer and ProfileCreator
+<li>Added informational warning when the ExtractEmbedded option may be useful
+<li>Improved experimental validate feature for RAW files
+<li>Fixed bug in experimental Validate feature that could cause out-of-memory
+    error when combined with "-use mwg"
+</ul>
+
+<a name='v10.73'><b>Jan. 5, 2018 - Version 10.73</b></a>
+<ul>
+<li>Added read/write support for GoPro RAW (GPR) files
+<li>Added a new Sony/Minolta lens (thanks Sylvain)
+<li>Improved conversions for GPS tags extracted from video streams
+</ul>
+
+<a name='v10.72'><b>Jan. 4, 2018 - Version 10.72</b></a>
+<ul>
+<li>Added IF feature to -p option
+<li>Decode streamed GPS position and other <a href="TagNames/QuickTime.html#Stream">streamed metadata</a> from MP4 videos
+    when the -ee option is used
+<li>Fixed problem geotagging GPSAltitude from some GPX files
+</ul>
+
+<a name='v10.71'><b>Jan. 2, 2018 - Version 10.71</b></a>
+<ul>
+<li>Decode some more ICC_Profile tags (thanks Eef Vreeland)
+<li>Decode MechanicalShutterCount for Nikon D850 (thanks Xavier Jubier)
+<li>Convert PNG:CreationTime values to/from standard date format
+<li>Fixed problem loading default config file from application directory
+<li>Fixed problem reading XMP where a namespace is defined after an attribute
+    which uses the namespace
+</ul>
+
+<a name='v10.70'><b>Dec. 27, 2017 - Version 10.70</b></a>
+<ul>
+<li>Search application directory for -config file
+<li>Improved robustness of JSON import
+<li>Enhancements to experimental Validate feature
+<li>Fixed bug introduced in 10.69 which could result in hang when writing
+    multi-segment JPEG metadata
+</ul>
+
+<a name='ancient' href="ancient_history.html"><b>History of older versions</b> (back to 1.00) --></a><br><br>
+
+<hr>
+<p class='lf'><a href="index.html">&lt;-- Back to ExifTool home page</a></p>
+</body>
+</html>
